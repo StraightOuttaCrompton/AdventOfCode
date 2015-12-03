@@ -24,7 +24,7 @@ namespace AdventOfCode
             Console.ReadLine();
         }
 
-        public List<int[]> ParseFile(string[] inputFile)
+        private List<int[]> ParseFile(string[] inputFile)
         {
             List<int[]> outputList = new List<int[]>();
 
@@ -37,7 +37,7 @@ namespace AdventOfCode
             return outputList;
         }
 
-        public int[] ConvertStringToInt(string[] args)
+        private int[] ConvertStringToInt(string[] args)
         {
             var output = new int[args.Length];
             for (int i = 0; i < args.Length; i++)
@@ -47,7 +47,7 @@ namespace AdventOfCode
             return output;
         }
 
-        public int CalculateTotalWrappingPaper(List<int[]> listOfPresentDimensions)
+        private int CalculateTotalWrappingPaper(List<int[]> listOfPresentDimensions)
         {
             var sumOfPaper = 0;
             foreach (var present in listOfPresentDimensions)
@@ -58,7 +58,7 @@ namespace AdventOfCode
             return sumOfPaper;
         }
 
-        public int CalculatePaperForPresent(int[] present)
+        private int CalculatePaperForPresent(int[] present)
         {
             var side1 = present[0] * present[1];
             var side2 = present[1] * present[2];
@@ -70,7 +70,7 @@ namespace AdventOfCode
             return totalPaper;
         }
 
-        public int CalculateTotalRibbon(List<int[]> listOfPresentDimensions)
+        private int CalculateTotalRibbon(List<int[]> listOfPresentDimensions)
         {
             var sumOfRibbon = 0;
             foreach (var present in listOfPresentDimensions)
@@ -81,7 +81,7 @@ namespace AdventOfCode
             return sumOfRibbon;
         }
 
-        public int CalculateRibbonForPresent(int[] present)
+        private int CalculateRibbonForPresent(int[] present)
         {
             var dim1 = present[0];
             var dim2 = present[1];

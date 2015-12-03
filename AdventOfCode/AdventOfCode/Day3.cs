@@ -15,10 +15,11 @@ namespace AdventOfCode
 
         }
 
-        public int FindNumberOfHouses(string directions)
+        private int FindNumberOfHouses(string directions)
         {
-            var currentLocation = new Coordinate(0, 0, 0);
             var coordinateList = new List<Coordinate>();
+            var currentLocation = new Coordinate(0, 0, 0);
+
             coordinateList.Add(currentLocation);
 
             foreach (var dir in directions)
@@ -90,7 +91,7 @@ namespace AdventOfCode
             return 3;
         }
 
-        public List<Coordinate> AddCurrentLocationToCoordinateList(Coordinate currentLocation, List<Coordinate> coordinateList)
+        private List<Coordinate> AddCurrentLocationToCoordinateList(Coordinate currentLocation, List<Coordinate> coordinateList)
         {
             foreach (var coord in coordinateList)
             {
