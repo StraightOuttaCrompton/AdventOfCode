@@ -10,7 +10,7 @@ namespace AdventOfCode
     {
         public void Run()
         {
-            string[] inputFile = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\adventofcode\AdventOfCode\Day2Input.txt");
+            string[] inputFile = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\Day2Input.txt");
             var listOfPresentDimensions = ParseFile(inputFile);
 
             var wrappingPaperNeeded = CalculateTotalWrappingPaper(listOfPresentDimensions);
