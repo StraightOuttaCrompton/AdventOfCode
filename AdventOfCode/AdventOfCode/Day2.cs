@@ -10,21 +10,21 @@ namespace AdventOfCode
     {
         public void Run()
         {
-            string[] inputFile = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\Day2Input.txt");
-            var listOfPresentDimensions = ParseFile(inputFile);
+            string[] inputFile = System.IO.File.ReadAllLines(@"AdventOfCode\Day2Input.txt"); //add relative file!!!!
+            var listOfPresentDimensions = CalculateListofPresentDimensions(inputFile);
 
             var wrappingPaperNeeded = CalculateTotalWrappingPaper(listOfPresentDimensions);
             var ribbonNeeded = CalculateTotalRibbon(listOfPresentDimensions);
 
-            Console.WriteLine("Wrapping Paper Needed");
+            Console.WriteLine("Square foot of wrapping paper needed");
             Console.WriteLine(wrappingPaperNeeded);
 
-            Console.WriteLine("Ribbon Needed");
+            Console.WriteLine("Length of ribbon needed");
             Console.WriteLine(ribbonNeeded);
             Console.ReadLine();
         }
 
-        private List<int[]> ParseFile(string[] inputFile)
+        private List<int[]> CalculateListofPresentDimensions(string[] inputFile)
         {
             List<int[]> outputList = new List<int[]>();
 

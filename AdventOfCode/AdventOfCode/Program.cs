@@ -10,10 +10,17 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            /*Console.WriteLine("Enter day number");
-            var dayNumber = Console.Read();*/
-            RunDay('4');
+            /*while (true)
+            {
+                Console.WriteLine("Enter day number");
+                var dayNumber = Console.Read();
+                RunDay(dayNumber);
+                Console.Read();
+
+            }*/
+            RunDay('1');
             Console.Read();
+            
         }
 
         public static void RunDay(int dayNumber)

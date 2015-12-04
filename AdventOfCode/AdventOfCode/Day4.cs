@@ -15,6 +15,7 @@ namespace AdventOfCode
             
             Console.WriteLine("Part1");
             Console.WriteLine(Part1(day4Input));
+
             Console.WriteLine("Part2");
             Console.WriteLine(Part2(day4Input));
 

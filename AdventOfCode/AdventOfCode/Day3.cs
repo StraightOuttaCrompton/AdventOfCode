@@ -26,6 +26,7 @@ namespace AdventOfCode
             Console.WriteLine("Number of houses Santa and RoboSanta visit");
             Console.WriteLine(numberOfHousesBothVisit);
             Console.Read();
+
         }
 
 
