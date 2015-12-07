@@ -39,11 +39,10 @@ namespace AdventOfCode
                         Console.WriteLine(input[3]);
                         break;
                     case "turn-on":
-                        TurnOn(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
-                        Console.WriteLine("togged");
+                        lightGrid = TurnOn(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
                         break;
                     case "turn-off":
-                        Console.WriteLine("togged");
+                        lightGrid = TurnOn(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
                         break;
                     default:
                         Console.WriteLine("Error, invalid input");
@@ -66,6 +65,25 @@ namespace AdventOfCode
             return outputArray;
         }
 
+        private List<bool[]> Toggle(List<bool[]> lightGrid, int[] from, int[] to)
+        {
+            for (int x = from[0] - 1; x < to[0]; x++)
+            {
+                for (int y = from[1] - 1; y < to[1]; y++)
+                {
+                    if (lightGrid[x][y])
+                    {
+                        lightGrid[x][y] = false;
+                    }
+                    else if (!lightGrid[x][y])
+                    {
+                        lightGrid[x][y] = true;
+                    }
+                }
+            }
+            return lightGrid;
+        }
+
         private List<bool[]> TurnOn(List<bool[]> lightGrid, int[] from, int[] to)
         {
             for (int x = from[0]-1; x < to[0]; x++)
@@ -73,6 +91,18 @@ namespace AdventOfCode
                 for (int y = from[1]-1; y < to[1]; y++)
                 {
                     lightGrid[x][y] = true;
+                }
+            }
+            return lightGrid;
+        }
+
+        private List<bool[]> TurnOff(List<bool[]> lightGrid, int[] from, int[] to)
+        {
+            for (int x = from[0] - 1; x < to[0]; x++)
+            {
+                for (int y = from[1] - 1; y < to[1]; y++)
+                {
+                    lightGrid[x][y] = false;
                 }
             }
             return lightGrid;
