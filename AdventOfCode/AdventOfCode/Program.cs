@@ -18,7 +18,7 @@ namespace AdventOfCode
                 Console.Read();
 
             }*/
-            RunDay('5');
+            RunDay('6');
             Console.Read();
             
         }
@@ -50,6 +50,11 @@ namespace AdventOfCode
                 case '5':
                     Day5 day5 = new Day5();
                     day5.Run();
+                    break;
+
+                case '6':
+                    Day6 day6 = new Day6();
+                    day6.Run();
                     break;
 
                 default:
