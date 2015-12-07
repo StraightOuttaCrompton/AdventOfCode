@@ -11,15 +11,17 @@ namespace AdventOfCode
         public void Run()
         {
             
-            var inputFile = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode\Day6Input.txt");
+            var inputFile = System.IO.File.ReadAllLines(@"C:\Users\HP\Documents\GitHub\AdventOfCode\AdventOfCode\AdventOfCode\Day6Input.txt");
             var listOfInstructions = CalculateListofInstructions(inputFile);
             //Part1(listOfInstructions);
 
-            var lightGrid = ConstructGrid(1000, 1000);
+            //var lightGrid = ConstructGrid(1000, 1000);
 
-            lightGrid = TurnOn(lightGrid, new[] { 1, 1 }, new[] { 1, 2 });
+            /*lightGrid = Toggle(lightGrid, new[] { 1, 1}, new[] { 10, 10 });
             Console.WriteLine(lightGrid[0][0]);
-            Console.WriteLine(lightGrid[0][1]);
+            Console.WriteLine(lightGrid[0][1]);*/
+
+            Console.WriteLine(Part1(listOfInstructions));
 
             //Console.WriteLine(blah[1]);
             Console.Read();
@@ -35,19 +37,19 @@ namespace AdventOfCode
                 switch (input[0])
                 {
                     case "toggle":
-                        Console.WriteLine("togged");
-                        Console.WriteLine(input[3]);
+                        lightGrid = Toggle(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
                         break;
                     case "turn-on":
                         lightGrid = TurnOn(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
                         break;
                     case "turn-off":
-                        lightGrid = TurnOn(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
+                        lightGrid = TurnOff(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
                         break;
                     default:
                         Console.WriteLine("Error, invalid input");
                         break;
                 }
+                return CountTrues(lightGrid);
             }
             
 
@@ -71,6 +73,7 @@ namespace AdventOfCode
             {
                 for (int y = from[1] - 1; y < to[1]; y++)
                 {
+                    var blah = lightGrid[x][y];
                     if (lightGrid[x][y])
                     {
                         lightGrid[x][y] = false;
@@ -106,6 +109,22 @@ namespace AdventOfCode
                 }
             }
             return lightGrid;
+        }
+
+        private int CountTrues(List<bool[]> lightGrid)
+        {
+            var count = 0;
+            for (int x = 0; x < lightGrid.Count; x++)
+            {
+                for (int y = 0; y < lightGrid[0].Length; y++)
+                {
+                    if (lightGrid[x][y])
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
         }
 
 
