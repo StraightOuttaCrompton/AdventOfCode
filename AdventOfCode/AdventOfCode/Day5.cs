@@ -10,11 +10,13 @@ namespace AdventOfCode
     {
         public void Run()
         {
-            string[] inputFile = System.IO.File.ReadAllLines(@"C:\Users\HP\Documents\GitHub\AdventOfCode\Day5Input.txt.txt");
+            string[] inputFile = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode\Day5Input.txt");
             var blah = inputFile[0];
             string tempBlah = string.Format("{0}{1}", blah[0], blah[1]);
             Console.Write(NumberOfNiceStringsPart2(inputFile));
             Console.Read();
+            /*Console.Write(ContainsPairOfTwoLetters("zztdcqzqddaazdjp"));
+            Console.Read();*/
         }
 
         //Part 1
@@ -134,11 +136,13 @@ namespace AdventOfCode
 
         private bool ContainsPairOfTwoLetters(string str)
         {
-            for (int i = 0; i < str.Length - 1; i++)
+            for (var i = 0; i < str.Length - 1; i++)
             {
                 var tempPair = string.Format("{0}{1}", str[i], str[i + 1]);
+
                 var tempString = str.Remove(i, 2);
-                //var partialString = tempString.Remove(i, 2);
+                tempString=tempString.Insert(i, "-");
+
                 if (tempString.Contains(tempPair))
                 {
                     return true;
@@ -150,7 +154,7 @@ namespace AdventOfCode
 
         private bool ContainsRepeatingLetterWithOneLetterBetween(string str)
         {
-            for (int i = 0; i < str.Length - 2; i++)
+            for (var i = 0; i < str.Length - 2; i++)
             {
                 if (str[i] == str[i + 2])
                 {
