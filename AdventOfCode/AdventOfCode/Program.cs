@@ -18,7 +18,7 @@ namespace AdventOfCode
                 Console.Read();
 
             }*/
-            RunDay('6');
+            RunDay('8');
             Console.Read();
             
         }

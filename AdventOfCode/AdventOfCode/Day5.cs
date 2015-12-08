@@ -11,12 +11,11 @@ namespace AdventOfCode
         public void Run()
         {
             string[] inputFile = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode\Day5Input.txt");
-            var blah = inputFile[0];
-            string tempBlah = string.Format("{0}{1}", blah[0], blah[1]);
+            Console.WriteLine();
+            Console.WriteLine();
             Console.Write(NumberOfNiceStringsPart2(inputFile));
             Console.Read();
-            /*Console.Write(ContainsPairOfTwoLetters("zztdcqzqddaazdjp"));
-            Console.Read();*/
+            
         }
 
         //Part 1
