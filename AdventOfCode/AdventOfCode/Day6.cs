@@ -13,21 +13,16 @@ namespace AdventOfCode
             
             var inputFile = System.IO.File.ReadAllLines(@"C:\Users\HP\Documents\GitHub\AdventOfCode\AdventOfCode\AdventOfCode\Day6Input.txt");
             var listOfInstructions = CalculateListofInstructions(inputFile);
-            //Part1(listOfInstructions);
 
-            //var lightGrid = ConstructGrid(1000, 1000);
-
-            /*lightGrid = Toggle(lightGrid, new[] { 1, 1}, new[] { 10, 10 });
-            Console.WriteLine(lightGrid[0][0]);
-            Console.WriteLine(lightGrid[0][1]);*/
-
+            Console.WriteLine("Number of lights on");
             Console.WriteLine(Part1(listOfInstructions));
 
-            //Console.WriteLine(blah[1]);
+            Console.WriteLine(Part2(listOfInstructions));
+
             Console.Read();
-
-
         }
+
+        //Part 1
 
         private int Part1(List<string[]> inputList)
         {
@@ -49,22 +44,8 @@ namespace AdventOfCode
                         Console.WriteLine("Error, invalid input");
                         break;
                 }
-                return CountTrues(lightGrid);
             }
-            
-
-            return 5;
-        }
-
-        private int[] ConvertToArray(string str)
-        {
-            int[] outputArray = new int[2];
-            string[] args = str.Split(',');
-
-            outputArray[0] = Int32.Parse(args[0]);
-            outputArray[1] = Int32.Parse(args[1]);
-
-            return outputArray;
+            return CountTrues(lightGrid);
         }
 
         private List<bool[]> Toggle(List<bool[]> lightGrid, int[] from, int[] to)
@@ -73,7 +54,6 @@ namespace AdventOfCode
             {
                 for (int y = from[1] - 1; y < to[1]; y++)
                 {
-                    var blah = lightGrid[x][y];
                     if (lightGrid[x][y])
                     {
                         lightGrid[x][y] = false;
@@ -89,9 +69,9 @@ namespace AdventOfCode
 
         private List<bool[]> TurnOn(List<bool[]> lightGrid, int[] from, int[] to)
         {
-            for (int x = from[0]-1; x < to[0]; x++)
+            for (int x = from[0] - 1; x < to[0]; x++)
             {
-                for (int y = from[1]-1; y < to[1]; y++)
+                for (int y = from[1] - 1; y < to[1]; y++)
                 {
                     lightGrid[x][y] = true;
                 }
@@ -111,6 +91,17 @@ namespace AdventOfCode
             return lightGrid;
         }
 
+        private List<bool[]> ConstructGrid(int x, int y)
+        {
+            var outputList = new List<bool[]>();
+            for (int i = 0; i < x; i++)
+            {
+                bool[] temp = new bool[y];
+                outputList.Add(temp);
+            }
+            return outputList;
+        }
+
         private int CountTrues(List<bool[]> lightGrid)
         {
             var count = 0;
@@ -127,22 +118,108 @@ namespace AdventOfCode
             return count;
         }
 
+        //Part2
 
-        private List<bool[]> ConstructGrid(int x, int y)
+        private int Part2(List<string[]> inputList)
         {
-            var outputList = new List<bool[]>();
+            var lightGrid = ConstructGridPart2(1000, 1000);
+            foreach (var input in inputList)
+            {
+                switch (input[0])
+                {
+                    case "toggle":
+                        lightGrid = TogglePart2(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
+                        break;
+                    case "turn-on":
+                        lightGrid = TurnOnPart2(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
+                        break;
+                    case "turn-off":
+                        lightGrid = TurnOffPart2(lightGrid, ConvertToArray(input[1]), ConvertToArray(input[3]));
+                        break;
+                    default:
+                        Console.WriteLine("Error, invalid input");
+                        break;
+                }
+            }
+            return TotalBrightness(lightGrid);
+        }
+
+        private List<int[]> TogglePart2(List<int[]> lightGrid, int[] from, int[] to)
+                {
+                    for (int x = from[0] - 1; x < to[0]; x++)
+                    {
+                        for (int y = from[1] - 1; y < to[1]; y++)
+                        {
+                            lightGrid[x][y]= lightGrid[x][y]+2;
+                        }
+                    }
+                    return lightGrid;
+                }
+
+        private List<int[]> TurnOnPart2(List<int[]> lightGrid, int[] from, int[] to)
+        {
+            for (int x = from[0] - 1; x < to[0]; x++)
+            {
+                for (int y = from[1] - 1; y < to[1]; y++)
+                {
+                    lightGrid[x][y]++;
+                }
+            }
+            return lightGrid;
+        }
+
+        private List<int[]> TurnOffPart2(List<int[]> lightGrid, int[] from, int[] to)
+        {
+            for (int x = from[0] - 1; x < to[0]; x++)
+            {
+                for (int y = from[1] - 1; y < to[1]; y++)
+                {
+                    if (lightGrid[x][y] > 0)
+                    {
+                        lightGrid[x][y]--;
+                    }
+                }
+            }
+            return lightGrid;
+        }
+
+
+        private List<int[]> ConstructGridPart2(int x, int y)
+        {
+            var outputList = new List<int[]>();
             for (int i = 0; i < x; i++)
             {
-                bool[] temp = new bool[y];
+                int[] temp = new int[y];
                 outputList.Add(temp);
             }
             return outputList;
-        } 
+        }
 
+        private int TotalBrightness(List<int[]> lightGrid)
+        {
+            var count = 0;
+            for (int x = 0; x < lightGrid.Count; x++)
+            {
+                for (int y = 0; y < lightGrid[0].Length; y++)
+                {
+                    count = count + lightGrid[x][y];
+                }
+            }
+            return count;
+        }
 
+        //Both
 
+        private int[] ConvertToArray(string str)
+        {
+            int[] outputArray = new int[2];
+            string[] args = str.Split(',');
 
+            outputArray[0] = Int32.Parse(args[0]);
+            outputArray[1] = Int32.Parse(args[1]);
 
+            return outputArray;
+        }
 
         private List<string[]> CalculateListofInstructions(string[] inputFile)
         {

@@ -57,6 +57,16 @@ namespace AdventOfCode
                     day6.Run();
                     break;
 
+                case '7':
+                    Day7 day7 = new Day7();
+                    day7.Run();
+                    break;
+
+                case '8':
+                    Day8 day8 = new Day8();
+                    day8.Run();
+                    break;
+
                 default:
                     Console.WriteLine("Not a valid input");
                     break;
