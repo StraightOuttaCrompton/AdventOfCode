@@ -16,12 +16,8 @@ namespace AdventOfCode
             var wrappingPaperNeeded = CalculateTotalWrappingPaper(listOfPresentDimensions);
             var ribbonNeeded = CalculateTotalRibbon(listOfPresentDimensions);
 
-            Console.WriteLine("Square foot of wrapping paper needed");
-            Console.WriteLine(wrappingPaperNeeded);
-
-            Console.WriteLine("Length of ribbon needed");
-            Console.WriteLine(ribbonNeeded);
-            Console.ReadLine();
+            Console.WriteLine("Square foot of wrapping paper needed:" + wrappingPaperNeeded);
+            Console.WriteLine("Length of ribbon needed:" + ribbonNeeded);
         }
 
         private List<int[]> CalculateListofPresentDimensions(string[] inputFile)

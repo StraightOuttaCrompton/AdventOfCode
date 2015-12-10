@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AdventOfCode
@@ -9,10 +10,8 @@ namespace AdventOfCode
     class Day8
     {
         public void Run()
-        {       
-
-
-            string[] inputFileForNumberOfCharactersOfCode = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode\Day8Input.txt");
+        {
+             string[] inputFileForNumberOfCharactersOfCode = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode\Day8Input.txt");
 
             string[] blah = new string[] {"", "abc", "aaa\"aaa", "\x27"};
 

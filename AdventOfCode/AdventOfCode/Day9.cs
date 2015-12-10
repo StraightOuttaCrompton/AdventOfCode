@@ -21,11 +21,8 @@ namespace AdventOfCode
             var combinationList = GetAllCombinations(townList);
             
             var allRouteDistances = FindAllRouteDistances(combinationList, distancesDictionary);
-            Console.WriteLine("Shortest Distance");
-            Console.WriteLine(allRouteDistances.Min());
-            Console.WriteLine("Longest Distance");
-            Console.WriteLine(allRouteDistances.Max());
-            Console.Read();
+            Console.WriteLine("Shortest Distance:" + allRouteDistances.Min());
+            Console.WriteLine("Longest Distance:"+allRouteDistances.Max());
         }
 
         private List<int> FindAllRouteDistances(List<List<string>> combinationList, Dictionary<Tuple<string, string>, int> locationDistances)

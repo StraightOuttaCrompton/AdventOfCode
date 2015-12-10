@@ -14,8 +14,6 @@ namespace AdventOfCode
             Console.WriteLine();
             Console.WriteLine();
             Console.Write(NumberOfNiceStringsPart2(inputFile));
-            Console.Read();
-            
         }
 
         //Part 1

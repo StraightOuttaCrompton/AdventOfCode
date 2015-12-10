@@ -12,14 +12,9 @@ namespace AdventOfCode
         public void Run()
         {
             var day4Input = "ckczppom";
-            
-            Console.WriteLine("Part1");
-            Console.WriteLine(Part1(day4Input));
 
-            Console.WriteLine("Part2");
-            Console.WriteLine(Part2(day4Input));
-
-            Console.Read();
+            Console.WriteLine("Part1:" + Part1(day4Input));
+            Console.WriteLine("Part2:" + Part2(day4Input));
         }
 
         private string Part1(string input)

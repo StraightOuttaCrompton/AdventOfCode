@@ -14,12 +14,8 @@ namespace AdventOfCode
             var inputFile = System.IO.File.ReadAllLines(@"C:\Users\HP\Documents\GitHub\AdventOfCode\AdventOfCode\AdventOfCode\Day6Input.txt");
             var listOfInstructions = CalculateListofInstructions(inputFile);
 
-            Console.WriteLine("Number of lights on");
-            Console.WriteLine(Part1(listOfInstructions));
-
-            Console.WriteLine(Part2(listOfInstructions));
-
-            Console.Read();
+            Console.WriteLine("Number of lights on:" + Part1(listOfInstructions));
+            Console.WriteLine("Total light brightness:" + Part2(listOfInstructions));
         }
 
         //Part 1

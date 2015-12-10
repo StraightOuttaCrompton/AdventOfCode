@@ -15,12 +15,8 @@ namespace AdventOfCode
             var Floor = CalculateFloor(Day1Input);
             var BasementOutput = CalculatePositionThatEntersBasement(Day1Input);
 
-            Console.WriteLine("Floor number");
-            Console.WriteLine(Floor);
-
-            Console.WriteLine("Enters basement after");
-            Console.WriteLine(BasementOutput);
-            Console.Read();
+            Console.WriteLine("Floor number:" + Floor);
+            Console.WriteLine("Enters basement after:" + BasementOutput);
         }
 
         private static int CalculateFloor(string Input)
