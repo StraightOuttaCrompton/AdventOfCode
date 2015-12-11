@@ -10,16 +10,12 @@ namespace AdventOfCode
     {
         public void Run()
         {
-            var blah = "3113322113";
-            Console.WriteLine("hello");
-             var split = SplitStringBetweenDifferentNumbers(blah);
-            var frodo = Part1(blah, 40);
-            //var bilbo = Part1(frodo, 10);
-            Console.WriteLine(frodo);
-            Console.Read();
+            var input = "3113322113";
+            Console.WriteLine("Length of result after 40 iterations:" + Parse(input, 40).Length);
+            Console.WriteLine("Length of result after 50 iterations:" + Parse(input, 50).Length);
         }
 
-        private string Part1(string str, int iterations)
+        private string Parse(string str, int iterations)
         {
             for (int i = 0; i < iterations; i++)
             {
