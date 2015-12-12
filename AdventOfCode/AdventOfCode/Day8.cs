@@ -11,52 +11,7 @@ namespace AdventOfCode
     {
         public void Run()
         {
-             string[] inputFileForNumberOfCharactersOfCode = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode\Day8Input.txt");
-
-            string[] blah = new string[] {"", "abc", "aaa\"aaa", "\x27"};
-
-            //Console.WriteLine(CalculateNumberOfCharactersInMemory(blah));
-
-            Console.WriteLine("rob smells");
-            Console.WriteLine(CalculateNumberOfCharactersOfCode(inputFileForNumberOfCharactersOfCode));
-
-            Console.WriteLine(CalculateNumberOfCharactersInMemory(inputFileForNumberOfCharactersInMemory));
-            Console.WriteLine(Part1(inputFileForNumberOfCharactersOfCode, inputFileForNumberOfCharactersInMemory));
-
-            var bilbo = "\xcfd";
-            Console.WriteLine(bilbo);
-            Console.Read();
-
-
-        }
-
-        private int Part1(string[] inputFileForNumberOfCharactersOfCode,string[] inputFileForNumberOfCharactersInMemory)
-        {
-            var output = CalculateNumberOfCharactersOfCode(inputFileForNumberOfCharactersOfCode)- CalculateNumberOfCharactersInMemory(inputFileForNumberOfCharactersInMemory);
-            return output;
-        }
-
-        private int CalculateNumberOfCharactersOfCode(string[] stringArray)
-        {
-            var count = 0;
-            foreach (var str in stringArray)
-            {
-                count = count + str.Length;
-            }
-            return count;
-        }
-
-        private int CalculateNumberOfCharactersInMemory(string[] stringArray)
-        {
-            var count = 0;
-            foreach (var str in stringArray)
-            {
-                count = count + str.Length;
-            }
-            return count;
-        }
-
-        string[] inputFileForNumberOfCharactersInMemory = new string[] {
+            string[] inputFileForNumberOfCharactersInMemory = new string[] {
                 "\xa8br\x8bjr\"",
                 "nq",
                 "zjrfcpbktjmrzgsz\xcaqsc\x03n\"huqab",
@@ -357,5 +312,52 @@ namespace AdventOfCode
                 "nywbv\\",
                 "twc\\ehfqxhgomgrgwpxyzmnkioj",
                 "qludrkkvljljd\\xvdeum\x4e"};
+
+            string[] inputFileForNumberOfCharactersOfCode = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode\Day8Input.txt");
+
+            string[] blah = new string[] {"", "abc", "aaa\"aaa", "\x27"};
+
+            //Console.WriteLine(CalculateNumberOfCharactersInMemory(blah));
+
+            Console.WriteLine("rob smells");
+            Console.WriteLine(CalculateNumberOfCharactersOfCode(inputFileForNumberOfCharactersOfCode));
+
+            Console.WriteLine(CalculateNumberOfCharactersInMemory(inputFileForNumberOfCharactersInMemory));
+            Console.WriteLine(Part1(inputFileForNumberOfCharactersOfCode, inputFileForNumberOfCharactersInMemory));
+
+            var bilbo = "\xcfd";
+            Console.WriteLine(bilbo);
+            Console.Read();
+
+
+        }
+
+        private int Part1(string[] inputFileForNumberOfCharactersOfCode,string[] inputFileForNumberOfCharactersInMemory)
+        {
+            var output = CalculateNumberOfCharactersOfCode(inputFileForNumberOfCharactersOfCode)- CalculateNumberOfCharactersInMemory(inputFileForNumberOfCharactersInMemory);
+            return output;
+        }
+
+        private int CalculateNumberOfCharactersOfCode(string[] stringArray)
+        {
+            var count = 0;
+            foreach (var str in stringArray)
+            {
+                count = count + str.Length;
+            }
+            return count;
+        }
+
+        private int CalculateNumberOfCharactersInMemory(string[] stringArray)
+        {
+            var count = 0;
+            foreach (var str in stringArray)
+            {
+                count = count + str.Length;
+            }
+            return count;
+        }
+
+
     }
 }
