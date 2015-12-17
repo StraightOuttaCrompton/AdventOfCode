@@ -89,6 +89,13 @@ namespace AdventOfCode
                     day12.Run();
                     break;
 
+
+                case "14":
+                    Day14 day14 = new Day14();
+                    day14.Run();
+                    break;
+
+
                 default:
                     Console.WriteLine("Not a valid input");
                     break;
