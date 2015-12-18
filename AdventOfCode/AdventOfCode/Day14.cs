@@ -10,10 +10,11 @@ namespace AdventOfCode
     {
         public void Run()
         {
-            var inputFile = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode");
+            var inputFile = System.IO.File.ReadAllLines(@"C:\Users\jcrompto\Documents\GitHubRepos\AdventOfCode\AdventOfCode\AdventOfCode\Day14Input.txt");
 
 
-
+            Console.WriteLine(inputFile[0]);
+            Console.Read();
         }
 
     }
