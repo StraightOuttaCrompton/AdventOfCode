@@ -11,7 +11,7 @@ namespace AdventOfCode
     {
         public void Run()
         {
-            string[] inputFileForNumberOfCharactersInMemory = new string[] {
+            string[] inputFileForNumberOfCharactersInMemory = {
                 "\xa8br\x8bjr\"",
                 "nq",
                 "zjrfcpbktjmrzgsz\xcaqsc\x03n\"huqab",
@@ -325,8 +325,6 @@ namespace AdventOfCode
             Console.WriteLine(CalculateNumberOfCharactersInMemory(inputFileForNumberOfCharactersInMemory));
             Console.WriteLine(Part1(inputFileForNumberOfCharactersOfCode, inputFileForNumberOfCharactersInMemory));
 
-            var bilbo = "\xcfd";
-            Console.WriteLine(bilbo);
             Console.Read();
 
 

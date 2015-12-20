@@ -19,7 +19,7 @@ namespace AdventOfCode
                 Console.WriteLine("");
             }*/
 
-            RunDay("7");
+            RunDay("11");
             Console.Read();
         }
 
