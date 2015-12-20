@@ -20,7 +20,11 @@ namespace AdventOfCode
             }*/
 
 
+<<<<<<< HEAD
             RunDay("12");
+=======
+            RunDay("17");
+>>>>>>> origin/master
             Console.Read();
 
         }
@@ -88,6 +92,18 @@ namespace AdventOfCode
                     Day12 day12 = new Day12();
                     day12.Run();
                     break;
+
+
+                case "14":
+                    Day14 day14 = new Day14();
+                    day14.Run();
+                    break;
+
+                case "17":
+                    Day17 day17 = new Day17();
+                    day17.Run();
+                    break;
+
 
                 default:
                     Console.WriteLine("Not a valid input");
