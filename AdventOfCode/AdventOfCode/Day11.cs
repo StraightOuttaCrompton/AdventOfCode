@@ -17,12 +17,25 @@ namespace AdventOfCode
             var input = "hepxcrrq";
 
             Console.WriteLine("Hello");
-            Console.WriteLine(Part1(input));
+            Console.WriteLine(NextString(input));
+            Console.WriteLine(Part2(input));
+            //Console.WriteLine(Part2(input));
             Console.Read();
         }
 
         private string Part1(string input)
         {
+            while (!IsOk(input))
+            {
+                input = NextString(input);
+            }
+            return input;
+        }
+
+        private string Part2(string input)
+        {
+            input = NextString(Part1(input));
+            
             while (!IsOk(input))
             {
                 input = NextString(input);
@@ -36,20 +49,35 @@ namespace AdventOfCode
             {
                 return false;
             }
-            if (!ContainsSameConsecutiveLetters(input) || !ContainsConsecutiveLetters(input))
+            if (!ContainsTwoSameConsecutiveLetters(input) || !ContainsConsecutiveLetters(input))
             {
                 return false;
             }
             return true;
         }
 
-        private bool ContainsSameConsecutiveLetters(string input)
+        private bool ContainsTwoSameConsecutiveLetters(string input)
         {
+            var containsPair = false;
+            var input2 = "";
             for (int i = 0; i < input.Length - 1; i++)
             {
                 if (input[i]==input[i+1])
                 {
-                    return true;
+                    containsPair = true;
+                    input2 = input.Remove(i, 2);
+                    input2 = input2.Insert(i, "-");
+                    break;
+                }
+            }
+            if (containsPair)
+            {
+                for (int j = 0; j < input2.Length - 1; j++)
+                {
+                    if (input2[j] == input2[j + 1])
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
@@ -57,9 +85,13 @@ namespace AdventOfCode
 
         private bool ContainsConsecutiveLetters(string input)
         {
+            
             for (int i = 0; i < input.Length-2; i++)
             {
-                if (input[i+1]==NextChar(input[i]) && input[i+2]==NextChar(input[i+1]))
+                if (input.Substring(i, 3) == "yza" || input.Substring(i, 3) == "zab")
+                {
+                }
+                else if (input[i+1]==NextChar(input[i]) && input[i+2]==NextChar(input[i+1]))
                 {
                     return true;
                 }
