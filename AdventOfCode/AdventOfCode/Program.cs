@@ -87,6 +87,11 @@ namespace AdventOfCode
                     day12.Run();
                     break;
 
+                case "13":
+                    Day13 day13 = new Day13();
+                    day13.Run();
+                    break;
+
                 case "14":
                     Day14 day14 = new Day14();
                     day14.Run();
